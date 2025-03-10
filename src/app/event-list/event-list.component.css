@@ -1,0 +1,91 @@
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+  table-layout: fixed;
+}
+
+th, td {
+  border: 1px solid #999292;
+  padding: 8px;
+  text-align: center
+}
+
+
+.table {
+  margin-bottom: 20px;
+}
+
+th {
+  background-color: #e0e2e6;  
+}
+
+.listevent {
+  margin-bottom: 20px;
+  width: 200px;
+}
+
+.button-container {
+  display: flex;
+  flex-direction: column;
+  margin-top: 100px;
+  width: 200px;
+  margin: 0 auto;
+}
+
+.button-container button {
+  margin-bottom: 10px;
+}
+
+.action-button {
+  padding: 5px 10px;
+  font-size: 14px;
+  color: #fff;
+  background-color: #0056b3;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  text-align: center;
+  margin-right: 10px;
+}
+.actions{
+  margin-right: 15px;
+} 
+
+
+.action-button:last-child {
+  margin-right: 0;
+}
+
+.action-button:hover {
+  background-color: #0056b3;
+}
+
+.action-button:active {
+  background-color: #004494;
+}
+
+.delete-button {
+  background-color: #dc3545;
+}
+
+.delete-button:hover {
+  background-color: #c82333;
+}
+
+.delete-button:active {
+  background-color: #bd2130;
+}
+
+.edit-button {
+  background-color: #28a745;
+}
+
+.edit-button:hover {
+  background-color: #218838;
+}
+
+.edit-button:active {
+  background-color: #1e7e34;
+}

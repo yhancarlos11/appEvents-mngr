@@ -1,0 +1,33 @@
+<h2></h2>
+<button  class="listevent"  (click)="loadEvents()">Listar eventos</button>
+<table class="table" *ngIf="showTable">
+  <thead>
+    <tr>
+      <th>Evento</th>
+      <th>Fecha</th>
+      <th>Hora</th>
+      <th>Descripción</th>
+      <th>Ubicación</th>
+      <th>Acciones</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let event of events">
+      <td>{{ event.title }}</td>
+      <td *ngIf="event.date !== 'Invalid date'; else invalidDate">{{ event.date }}</td>
+<ng-template #invalidDate><td>Invalid date</td></ng-template>
+      <td>{{ event.time }}</td>
+      <td>{{ event.description }}</td>
+      <td>{{ event.location }}</td>
+      <td>
+        <button class="actions" (click)="editEvent(event.id)">Editar</button>
+        <button class="delete-button" (click)="deleteEvent(event.id)">Eliminar</button>
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+<div class="button-container">
+  <button routerLink="/events/new">Crear evento</button>
+  <button (click)="logout()">Cerrar sesión</button>
+</div>

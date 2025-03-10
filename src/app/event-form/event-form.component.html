@@ -1,0 +1,29 @@
+<form class="formulario" [formGroup]="eventForm" (ngSubmit)="onSubmit()">
+  <div>
+    <label for="title">Nombre del evento</label>
+    <input id="title" formControlName="title" />
+  </div>
+  <div>
+    <label for="date">Fecha</label>
+    <input id="date" type="date" formControlName="date" [min]="minDate" />
+    <div *ngIf="eventForm.get('date')?.hasError('invalidDate')">
+      La fecha no puede ser en el pasado.
+    </div>
+  </div>
+  <div>
+    <label for="time">Hora</label>
+    <input id="time" type="time" formControlName="time" />
+  </div>
+  <div>
+    <label for="description">Descripción</label>
+    <textarea id="description" formControlName="description"></textarea>
+  </div>
+  <div>
+    <label for="location">Ubicación</label>
+    <select id="location" formControlName="location">
+      <option *ngFor="let location of locations" [value]="location">{{ location }}</option>
+    </select>
+  </div>
+  <button class="buttonsave" type="submit" [disabled]="eventForm.invalid">Guardar</button>
+  <button class="buttoncancelate" type="button" (click)="navigateToEventList()">Cancelar</button>
+</form>
