@@ -11,7 +11,7 @@ const port = 3000;
 
 
 module.exports = app;
-const SECRET_KEY = '1uHgAcIkfzfEP3k93UOP2';
+const SECRET_KEY = '**************';
 
 app.use(cors({
   origin: 'http://localhost:4200',
